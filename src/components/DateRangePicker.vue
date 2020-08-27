@@ -641,7 +641,7 @@
         end.setSeconds(value.seconds);
 
         this.end = this.$dateUtil.validateDateRange(end, this.minDate, this.maxDate);
-        
+
         // if autoapply is ON we should update the value on time selection change
         if (this.autoApply) {
           this.$emit('update', {startDate: this.start, endDate: this.end})
@@ -757,12 +757,12 @@
 
 </script>
 
-<style lang="scss">
-  @import '../assets/daterangepicker.scss';
+<style lang="stylus">
+  @import '../assets/daterangepicker.styl';
 </style>
 
-<style lang="scss" scoped>
-  $week-width: 0px;
+<style lang="stylus" scoped>
+  $week-width = 0px;
 
   .reportrange-text {
     background: #fff;
@@ -887,7 +887,6 @@
   }
 
   .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active for <2.1.8 */
   {
     transform: translateX(10px);
     opacity: 0;

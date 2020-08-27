@@ -237,7 +237,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="stylus">
     th, td {
         padding: 2px;
         background-color: white;
@@ -254,20 +254,10 @@
         opacity: 0.6;
     }
 
-    @function str-replace($string, $search, $replace: "") {
-        $index: str-index($string, $search);
-
-        @if $index {
-            @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-        }
-
-        @return $string;
-    }
-
-    $carousel-control-color: #ccc !default;
-    $viewbox: '-2 -2 10 10';
-    $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='#{$viewbox}'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23") !default;
-    $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='#{$viewbox}'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+    $carousel-control-color = #ccc !default;
+    $viewbox = '-2 -2 10 10';
+    $carousel-control-prev-icon-bg = replace("#", "%23", "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='#{$viewbox}'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !default;
+    $carousel-control-next-icon-bg = replace("#", "%23", "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='#{$viewbox}'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !default;
 
     .fa {
         display: inline-block;
@@ -292,14 +282,14 @@
         width: 16px;
         height: 16px;
         display: block;
-        background-image: $carousel-control-prev-icon-bg;
+        background-image: url($carousel-control-prev-icon-bg);
     }
 
     .chevron-right {
         width: 16px;
         height: 16px;
         display: block;
-        background-image: $carousel-control-next-icon-bg;
+        background-image: url($carousel-control-next-icon-bg);
     }
 
     .yearselect {
