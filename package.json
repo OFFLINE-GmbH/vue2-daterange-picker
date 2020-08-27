@@ -1,6 +1,6 @@
 {
   "name": "vue2-daterange-picker",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Vue2 date range picker based on https://github.com/dangrossman/bootstrap-daterangepicker (no jQuery)",
   "author": "Nikola Kostadinov <nikolakk@gmail.com>",
   "main": "dist/vue2-daterange-picker.umd.min.js",
@@ -9,21 +9,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Innologica/vue2-daterange-picker"
+    "url": "https://github.com/OFFLINE-GmbH/vue2-daterange-picker"
   },
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "components:parse": "node ./docs/.scripts/parse.js",
-    "components:watch": "watch \"npm run components:parse\" ./src",
-    "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue2-daterange-picker ./src/index.js",
-    "docs:dev": "concurrently \"npm run components:watch\" \"vuepress dev docs\"",
-    "docs:build": "vuepress build docs",
-    "prepublishOnly": "npm run lib",
-    "unit": "vue-cli-service test:unit"
+
   },
   "dependencies": {
     "vue": "^2.6.10"
@@ -52,8 +45,6 @@
     "eslint-plugin-vue": "^6.0.1",
     "markdown-it-footnote": "^3.0.2",
     "mockdate": "^2.0.5",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.2",
     "webpack": "^4.41.2"
