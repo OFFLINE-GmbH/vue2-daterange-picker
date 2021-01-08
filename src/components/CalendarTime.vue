@@ -2,16 +2,16 @@
   <div class="calendar-time">
     <select v-model="hour" class="hourselect form-control mr-1">
       <option v-for="h in hours"
-        :key="h" :value="h">{{h | formatNumber}}</option>
+        :key="h" :value="h">{{ formatNumber(h) }}</option>
     </select>
     :<select v-model="minute" class="minuteselect form-control ml-1">
       <option v-for="m in minutes"
-        :key="m" :value="m" >{{m | formatNumber}}</option>
+        :key="m" :value="m" >{{ formatNumber(m) }}</option>
     </select>
     <template v-if="secondPicker">
       :<select v-model="second" class="secondselect form-control ml-1">
         <option v-for="s in 60"
-          :key="s-1" :value="s-1">{{s-1 | formatNumber}}</option>
+          :key="s-1" :value="s-1">{{ formatNumber(s-1) }}</option>
       </select>
     </template>
     <select v-if="!hour24" v-model="ampm" class="ampmselect">
@@ -23,14 +23,7 @@
 
 <script>
   export default {
-    filters: {
-      formatNumber: (value) => {
-        if (value < 10) {
-          return '0'+value.toString();
-        }
-        return value.toString();
-      },
-    },
+    emits: ['update'],
     props: {
       miniuteIncrement: {
         type: Number,
@@ -93,6 +86,12 @@
       },
     },
     methods: {
+      formatNumber: (value) => {
+        if (value < 10) {
+          return '0'+value.toString();
+        }
+        return value.toString();
+      },
       getHour() {
         if (this.hour24) {
           return this.hour;

@@ -52,6 +52,7 @@
   export default {
     mixins: [dateUtilMixin],
     name: 'calendar',
+    emits: ['dateClick', 'hoverDate', 'change-month'],
     props: {
       monthDate: Date,
       localeData: Object,

@@ -189,6 +189,7 @@
       prop: 'dateRange',
       event: 'update',
     },
+    emits: ['toggle', 'hoverDate', 'select', 'update', 'change-month'],
     props: {
       /**
        * minimum date allowed to be selected

@@ -27,6 +27,7 @@
 
   export default {
     mixins: [dateUtilMixin],
+    emits: ['clickRange', 'showCustomRange'],
     props: {
       ranges: Object,
       selected: Object,
